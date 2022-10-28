@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <style media="screen">
+      input[name]{
+        margin-top:-5px
+      }
+    </style>
+
+
+    <div class="container-fluid ">
+     <div class="row">
+        <div class="offset-md-3 col-md-5">
+          <form method="POST" class="border px-3 py-3 shadow">
+            <h2 class="text-center">ENTER STUDENT DATA HERE..</h2>
+            {% csrf_token %}
+
+            <label>ENTER FIRST NAME:</label><br>
+            <input type="text" name="fname" class="form-control"><br>
+
+            <label>ENTER SECOND NAME:</label><br>
+            <input type="text" name="lname" class="form-control"><br>
+
+            <label>ENTER EMAIL:</label><br>
+            <input type="email" name="email" class="form-control"><br>
+
+            <label>ENTER MOBILE:</label><br>
+            <input type="number" name="mobile" class="form-control" ><br>
+
+             <label>ENTER INSTITUTE NAME:</label><br>
+            <input type="text" name="iname" class="form-control" value="NTH" readonly><br>
+
+            <label>Enter ASSIGNMENT1 MARKS:</label><br>
+             <input type="number" name="a1" class="form-control"><br>
+
+             <label>Enter ASSIGNMENT2 MARKS:</label><br>
+             <input type="number" name="a2" class="form-control"><br>
+
+             <label>Enter ASSIGNMENT3 MARKS:</label><br>
+             <input type="number" name="a3" class="form-control">
+              <center class="mt-2">
+             <input type="submit" name="save" value="save" class="btn btn-success">
+             <input type="reset" name="clear" value="clear" class="btn btn-danger"><br>
+             <a href="{% url "mainpage" %}">Go To Mainpage</a>
+           </center>
+</form>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

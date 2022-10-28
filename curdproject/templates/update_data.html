@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <style media="screen">
+      input[name]{
+        margin-top:-5px
+      }
+    </style>
+
+
+    <div class="container-fluid ">
+     <div class="row">
+        <div class="offset-md-3 col-md-5">
+          <form method="POST" class="border px-3 py-3 shadow">
+            <h2 class="text-center">UPDATE STUDENT DATA HERE..</h2>
+            {% csrf_token %}
+
+            <label>ENTER FIRST NAME:</label><br>
+            <input type="text" name="fname" class="form-control" value="{{student.fname}}"><br>
+
+            <label>ENTER SECOND NAME:</label><br>
+            <input type="text" name="lname" class="form-control"  value="{{student.lname}}"><br>
+
+            <label>ENTER EMAIL:</label><br>
+            <input type="email" name="email" class="form-control"  value="{{student.email}}"><br>
+
+            <label>ENTER MOBILE:</label><br>
+            <input type="number" name="mobile" class="form-control"  value="{{student.mobile}}"><br>
+
+             <label>ENTER INSTITUTE NAME:</label><br>
+            <input type="text" name="iname" class="form-control" value="NTH" readonly><br>
+
+            <label>Enter ASSIGNMENT1 MARKS:</label><br>
+             <input type="number" name="assignment1" class="form-control"  value="{{student.assignment1}}"><br>
+
+             <label>Enter ASSIGNMENT2 MARKS:</label><br>
+             <input type="number" name="assignment2" class="form-control" value="{{student.assignment2}}"><br>
+
+             <label>Enter ASSIGNMENT3 MARKS:</label><br>
+             <input type="number" name="assignment3" class="form-control" value="{{student.assignment3}}">
+              <center class="mt-2">
+             <input type="submit" name="update" value="update" class="btn btn-success">
+             <input type="reset" name="clear" value="clear" class="btn btn-danger"><br>
+             <a href="{% url "mainpage" %}">Go To Mainpage</a>
+           </center>
+</form>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>
